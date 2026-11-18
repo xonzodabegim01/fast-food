@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e5232e">
+  <title>RED BITE — Mazali lahzalar!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#home"><span class="logo-mark">R</span><span>RED <b>BITE</b><small>FAST FOOD</small></span></a>
+    <nav class="main-nav">
+      <a href="#home" data-i18n="home">Bosh sahifa</a>
+      <a href="#menu" data-i18n="menu">Menyu</a>
+      <a href="#about" data-i18n="about">Biz haqimizda</a>
+      <a href="#contact" data-i18n="contact">Aloqa</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Theme">🌙</button>
+      <select id="language" aria-label="Language"><option value="uz">UZ</option><option value="ru">RU</option></select>
+      <button class="cart-button" id="openCart">🛒 <span data-i18n="cart">Savat</span> <b id="cartCount">0</b></button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow" data-i18n="heroTag">HAR LAHZA — MAZALI!</span>
+        <h1 data-i18n="heroTitle">Mazali ta'm. <em>Unutilmas</em> lahza!</h1>
+        <p data-i18n="heroText">Sevimli burger, lavash va pitsalaringiz — yangi, issiq va tez yetkazib beriladi.</p>
+        <a class="primary-btn" href="#menu" data-i18n="orderNow">Buyurtma berish <span>→</span></a>
+        <div class="hero-points"><span>⚡ <b data-i18n="fast">Tez yetkazish</b></span><span>🍔 <b data-i18n="fresh">Yangi mahsulotlar</b></span></div>
+      </div>
+      <div class="hero-sticker"><b>100%</b><span>LOVE<br>IN EVERY BITE</span></div>
+    </section>
+
+    <section class="promo-strip">
+      <span>🎉</span><p data-i18n="promo">JUMA KUNI — har bir katta buyurtmaga ichimlik sovg‘a!</p><span>🥤</span>
+    </section>
+
+    <section class="menu-section section" id="menu">
+      <div class="section-heading"><div><span class="eyebrow" data-i18n="ourMenu">BIZNING MENYU</span><h2 data-i18n="chooseFood">Sevimli taomingizni tanlang</h2></div>
+        <label class="search-box">🔎 <input id="searchInput" type="search" placeholder="Taom qidirish..." data-i18n-placeholder="search"></label>
+      </div>
+      <div class="categories" id="categories"></div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-state" id="emptyState" hidden data-i18n="notFound">Hech narsa topilmadi.</p>
+    </section>
+
+    <section class="deal-section section" id="about">
+      <div class="deal-copy"><span class="eyebrow" data-i18n="specialOffer">MAXSUS TAKLIF</span><h2 data-i18n="dealTitle">Do‘stlar bilan yanada mazali!</h2><p data-i18n="dealText">Combo to‘plamlarimiz bilan sevimli ta’mlarni birga baham ko‘ring.</p><a class="primary-btn" href="#menu" data-i18n="viewMenu">Menyuni ko‘rish →</a></div>
+      <div class="deal-image"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=85" alt="Burger va fast food"></div>
+    </section>
+
+    <section class="features section">
+      <article><span>🚀</span><h3 data-i18n="feature1">Tez yetkazib berish</h3><p data-i18n="feature1Text">Buyurtmangizni issiq holda yetkazamiz.</p></article>
+      <article><span>🥬</span><h3 data-i18n="feature2">Sifatli mahsulotlar</h3><p data-i18n="feature2Text">Har kuni yangi masalliqlar.</p></article>
+      <article><span>❤️</span><h3 data-i18n="feature3">Mehr bilan tayyorlangan</h3><p data-i18n="feature3Text">Har bir buyurtmaga alohida e’tibor.</p></article>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-inner"><a class="logo footer-logo" href="#home"><span class="logo-mark">R</span><span>RED <b>BITE</b><small>FAST FOOD</small></span></a>
+      <div><h3 data-i18n="contact">Aloqa</h3><p>📍 Andijon shahri</p><p>📞 +998 90 123 45 67</p></div>
+      <div><h3 data-i18n="workingHours">Ish vaqti</h3><p>Har kuni: 09:00 — 23:00</p><p>Instagram: @redbite.uz</p></div>
+    </div><p class="copyright">© 2026 RED BITE. <span data-i18n="rights">Barcha huquqlar himoyalangan.</span></p>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="drawer-head"><h2 data-i18n="yourCart">Savatingiz</h2><button class="close-btn" id="closeCart">✕</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-bottom"><div class="total-line"><span data-i18n="total">Jami:</span><strong id="cartTotal">0 so‘m</strong></div><button class="primary-btn checkout-btn" id="checkoutBtn" data-i18n="checkout">Buyurtma berish</button></div>
+  </aside>
+
+  <div class="modal" id="checkoutModal">
+    <div class="modal-card"><button class="close-btn modal-close" id="closeModal">✕</button><h2 data-i18n="checkoutTitle">Buyurtmani rasmiylashtirish</h2>
+      <form id="orderForm"><label data-i18n="yourName">Ismingiz<input name="name" required placeholder="Ismingiz"></label><label data-i18n="phone">Telefon raqamingiz<input name="phone" required type="tel" placeholder="+998 __ ___ __ __"></label><label data-i18n="address">Yetkazib berish manzili<input name="address" required placeholder="Manzilingiz"></label><label data-i18n="comment">Izoh<textarea name="comment" rows="3" placeholder="Qo‘shimcha izoh..."></textarea></label><button class="primary-btn" type="submit" data-i18n="sendOrder">Buyurtmani yuborish</button></form>
+      <p class="form-note" data-i18n="orderNote">Buyurtma ma’lumotlari telefon orqali tasdiqlanadi.</p>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="./index.js"></script>
+</body>
+</html>
